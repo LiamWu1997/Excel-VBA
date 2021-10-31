@@ -1,0 +1,128 @@
+Sub transferringdata()
+
+'DataEntry_1001
+
+Sheets("Sample Data").Select
+
+'lookup all autofiltered data minus the header
+Dim R As Range, rng As Range
+Set R = Range("A4").CurrentRegion
+Set rng = R.Offset(1, 0).Resize(R.Rows.Count - 1)
+
+'filter the specific rows, in this case "DataEntry_1001"
+rng.AutoFilter field:=1, Criteria1:="=*DataEntry_1001*", Operator:=xlAnd
+
+'Copy all filtered data by selecting only the visible cells
+Set rng = rng.SpecialCells(xlCellTypeVisible)
+rng.Copy
+    Sheets("Reviewing").Select 'this is the destination where the data will be pasted
+    Range("A4").Select
+    ActiveSheet.Paste Link:=True
+
+
+'DataEntry_1002
+
+Sheets("Sample Data").Select
+
+
+Set R = Range("A4").CurrentRegion
+Set rng = R.Offset(1, 0).Resize(R.Rows.Count - 1)
+
+rng.AutoFilter field:=1, Criteria1:="=*DataEntry_1002*", Operator:=xlAnd
+Set rng = rng.SpecialCells(xlCellTypeVisible)
+rng.Copy
+    Sheets("Reviewing").Select
+    Range("A11").Select
+    ActiveSheet.Paste Link:=True
+    
+
+'DataEntry_1003
+
+Sheets("Sample Data").Select
+
+Set R = Range("A18").CurrentRegion
+Set rng = R.Offset(1, 0).Resize(R.Rows.Count - 1)
+
+rng.AutoFilter field:=1, Criteria1:="=*DataEntry_1003*", Operator:=xlAnd
+Set rng = rng.SpecialCells(xlCellTypeVisible)
+rng.Copy
+    Sheets("Reviewing").Select
+    Range("A18").Select
+    ActiveSheet.Paste Link:=True
+    
+
+
+'DataEntry_1004
+Sheets("Sample Data").Select
+
+Set R = Range("A4").CurrentRegion
+Set rng = R.Offset(1, 0).Resize(R.Rows.Count - 1)
+
+rng.AutoFilter field:=1, Criteria1:="=*DataEntry_1004*", Operator:=xlAnd
+Set rng = rng.SpecialCells(xlCellTypeVisible)
+rng.Copy
+    Sheets("Reviewing").Select
+    Range("A25").Select
+    ActiveSheet.Paste Link:=True
+    
+
+'DataEntry_1005
+
+Sheets("Sample Data").Select
+
+Set R = Range("A4").CurrentRegion
+Set rng = R.Offset(1, 0).Resize(R.Rows.Count - 1)
+
+rng.AutoFilter field:=1, Criteria1:="=*DataEntry_1005*", Operator:=xlAnd
+Set rng = rng.SpecialCells(xlCellTypeVisible)
+rng.Copy
+    Sheets("Reviewing").Select
+    Range("A32").Select
+    ActiveSheet.Paste Link:=True
+
+
+'DataEntry_1006
+
+Sheets("Sample Data").Select
+
+Set R = Range("A4").CurrentRegion
+Set rng = R.Offset(1, 0).Resize(R.Rows.Count - 1)
+
+rng.AutoFilter field:=1, Criteria1:="=*DataEntry_1006*", Operator:=xlAnd
+Set rng = rng.SpecialCells(xlCellTypeVisible)
+rng.Copy
+    Sheets("Reviewing").Select
+    Range("A39").Select
+    ActiveSheet.Paste Link:=True
+
+
+'DataEntry_1007
+
+Sheets("Sample Data").Select
+
+Set R = Range("A4").CurrentRegion
+Set rng = R.Offset(1, 0).Resize(R.Rows.Count - 1)
+
+rng.AutoFilter field:=1, Criteria1:="=*DataEntry_1007*", Operator:=xlAnd
+Set rng = rng.SpecialCells(xlCellTypeVisible)
+rng.Copy
+    Sheets("Reviewing").Select
+    Range("A47").Select
+    ActiveSheet.Paste Link:=True
+
+
+'Samples
+
+Sheets("Sample Data").Select
+
+Set R = Range("A4").CurrentRegion
+Set rng = R.Offset(1, 0).Resize(R.Rows.Count - 1)
+
+rng.AutoFilter field:=1, Criteria1:="=*Sample*", Operator:=xlAnd
+Set rng = rng.SpecialCells(xlCellTypeVisible)
+rng.Copy
+    Sheets("Reviewing").Select
+    Range("A54").Select
+    ActiveSheet.Paste Link:=True
+
+End Sub
